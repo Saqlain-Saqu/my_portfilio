@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Frontend Developer Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --secondary: #4FACFE;
+      --accent: #FF6584;
+      --light: #F8F9FA;
+      --dark: #212529;
+      --pastel-mint: #A0E7E5;
+      --pastel-peach: #FFAEBC;
+      --charm-blue: #E0F7FF;
+      --charm-pink: #FFEEF1;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+    }
+    section#hero {
+        background-color: gray;
+    }
+    section#contact {
+    background-color: #746767; /* Very light grey */
+}  
+
+        .animate-gradient {
+      background-size: 300% 300%;
+      animation: gradient 8s ease infinite;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .progress-animation {
+      transition: width 1.5s ease-out;
+    }
+    
+    /* Charming background patterns */
+    .charm-bg-1 {
+      background-color: var(--charm-blue);
+      background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 80%, rgba(255,255,255,0.8) 0%, transparent 20%);
+    }
+    
+    .charm-bg-2 {
+      background-color: var(--charm-pink);
+      background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.7) 0%, transparent 25%),
+                        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.7) 0%, transparent 25%);
+    }
+    
+    .charm-bg-3 {
+      background-color: white;
+      background-image: radial-gradient(circle at 5% 5%, var(--pastel-mint) 0%, transparent 15%),
+                        radial-gradient(circle at 95% 95%, var(--pastel-peach) 0%, transparent 15%);
+    }
+    
+    .animate-blob {
+      animation: blob 7s infinite alternate;
+    }
+    
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+    .bg-gradient-to-r.from-\[var\(--secondary\)\].to-\[var\(--primary\)\].h-3.rounded-full.progress-animation {
+     background-color: cadetblue;
+    }
+    
+    @keyframes blob {
+      0% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#4FACFE] to-[#00F2FE] animate-gradient">
+    <div class="text-center px-4 max-w-6xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6" data-aos="fade-down">
+        Transforming Stores into <span class="text-[var(--accent)] drop-shadow-md">Conversion Machines</span>
+      </h1>
+      <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto" data-aos="fade-down" data-aos-delay="100">
+        Shopify Frontend Specialist crafting pixel-perfect, high-converting storefronts
+      </p>
+      <button class="bg-[var(--primary)] hover:bg-[#5a52e0] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        View My Work
+      </button>
+    </div>
+    <a href="#projects" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-white text-2xl"></i>
+    </a>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 charm-bg-1">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-[var(--dark)]" data-aos="fade-up">
+        My Shopify <span class="text-[var(--primary)]">Masterpieces</span>
+      </h2>
+      
+      <div class="swiper projectSwiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          <!-- Project 1 -->
+          <div class="swiper-slide max-w-md">
+            <div class="relative rounded-xl overflow-hidden shadow-lg h-96 transform transition-all hover:scale-105 duration-300">
+              <img src="./images/project 1.JPG" alt="Project 1" class="w-full h-full object-cover">
+              <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-all duration-300 flex items-end p-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">Luxury Fashion Store</h3>
+                  <p class="text-white mb-4">Custom Shopify theme with 3D product viewer</p>
+                  <div class="flex items-center">
+                    <span class="bg-[var(--primary)] text-white px-3 py-1 rounded-full text-sm font-medium">+35% Conversions</span>
+                    <a href="#" class="ml-auto text-white hover:text-[var(--accent)] transition-colors">
+                      <i class="fas fa-external-link-alt text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="swiper-slide max-w-md">
+            <div class="relative rounded-xl overflow-hidden shadow-lg h-96 transform transition-all hover:scale-105 duration-300">
+              <img src="./images/project 2.JPG" alt="Project 2" class="w-full h-full object-cover">
+              <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-all duration-300 flex items-end p-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">Minimalist Jewelry Brand</h3>
+                  <p class="text-white mb-4">Custom sections with animated product storytelling</p>
+                  <div class="flex items-center">
+                    <span class="bg-[var(--primary)] text-white px-3 py-1 rounded-full text-sm font-medium">1.2s Load Time</span>
+                    <a href="#" class="ml-auto text-white hover:text-[var(--accent)] transition-colors">
+                      <i class="fas fa-external-link-alt text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 3 -->
+          <div class="swiper-slide max-w-md">
+            <div class="relative rounded-xl overflow-hidden shadow-lg h-96 transform transition-all hover:scale-105 duration-300">
+              <img src="./images/project 3.JPG" alt="Project 3" class="w-full h-full object-cover">
+              <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-all duration-300 flex items-end p-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">Health & Wellness Store</h3>
+                  <p class="text-white mb-4">Subscription-focused theme with custom checkout</p>
+                  <div class="flex items-center">
+                    <span class="bg-[var(--primary)] text-white px-3 py-1 rounded-full text-sm font-medium">+28% AOV</span>
+                    <a href="#" class="ml-auto text-white hover:text-[var(--accent)] transition-colors">
+                      <i class="fas fa-external-link-alt text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 charm-bg-3">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-[var(--dark)]" data-aos="fade-up">
+        My <span class="text-[var(--primary)]">Shopify</span> Toolkit
+      </h2>
+      
+      <div class="max-w-3xl mx-auto space-y-8">
+        <!-- Skill 1 -->
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="flex justify-between mb-2">
+            <span class="text-lg font-medium text-[var(--dark)]">Liquid Templating</span>
+            <span class="text-[var(--primary)] font-bold">95%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] h-3 rounded-full progress-animation" style="width: 95%"></div>
+          </div>
+        </div>
+        
+        <!-- Skill 2 -->
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="flex justify-between mb-2">
+            <span class="text-lg font-medium text-[var(--dark)]">Shopify Theme Development</span>
+            <span class="text-[var(--primary)] font-bold">90%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] h-3 rounded-full progress-animation" style="width: 90%"></div>
+          </div>
+        </div>
+        
+        <!-- Skill 3 -->
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="flex justify-between mb-2">
+            <span class="text-lg font-medium text-[var(--dark)]">Custom Sections Development</span>
+            <span class="text-[var(--primary)] font-bold">85%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] h-3 rounded-full progress-animation" style="width: 85%"></div>
+          </div>
+        </div>
+        
+        <!-- Skill 4 -->
+        <div data-aos="fade-up" data-aos-delay="400">
+          <div class="flex justify-between mb-2">
+            <span class="text-lg font-medium text-[var(--dark)]">Performance Optimization</span>
+            <span class="text-[var(--primary)] font-bold">88%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] h-3 rounded-full progress-animation" style="width: 88%"></div>
+          </div>
+        </div>
+        
+        <!-- Skill 5 -->
+        <div data-aos="fade-up" data-aos-delay="500">
+          <div class="flex justify-between mb-2">
+            <span class="text-lg font-medium text-[var(--dark)]">Conversion Rate Optimization</span>
+            <span class="text-[var(--primary)] font-bold">82%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] h-3 rounded-full progress-animation" style="width: 82%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 charm-bg-2">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4 text-[var(--dark)]" data-aos="fade-up">
+        How I Can <span class="text-[var(--primary)]">Help You</span>
+      </h2>
+      <p class="text-xl text-center text-gray-700 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Comprehensive Shopify solutions to elevate your eCommerce presence
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Custom Theme Development</h3>
+          <p class="text-gray-600">Tailored Shopify themes from scratch designed for your brand identity and optimized for conversions.</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-magic"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Theme Customization</h3>
+          <p class="text-gray-600">Enhance existing themes with custom features, animations, and unique functionality.</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Performance Optimization</h3>
+          <p class="text-gray-600">Speed up your store with advanced optimizations to improve Lighthouse scores and conversions.</p>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Responsive Design</h3>
+          <p class="text-gray-600">Pixel-perfect designs that work flawlessly across all devices and screen sizes.</p>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">CRO Implementation</h3>
+          <p class="text-gray-600">Data-driven improvements to increase conversion rates and average order value.</p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="700">
+          <div class="text-[var(--primary)] mb-4 text-4xl">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Ongoing Support</h3>
+          <p class="text-gray-600">Reliable maintenance and updates to keep your store running smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 relative overflow-hidden charm-bg-1">
+    <div class="absolute inset-0 bg-[var(--primary)] opacity-5 z-0"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl font-bold text-center mb-16 text-[var(--dark)]" data-aos="fade-up">
+        Client <span class="text-[var(--primary)]">Success Stories</span>
+      </h2>
+      
+      <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper testimonialSwiper">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="text-center px-4">
+                <div class="text-2xl md:text-3xl italic text-gray-700 mb-8">
+                  "Increased our conversion rate by 40% with his Shopify optimizations. The attention to detail in the theme development was exceptional."
+                </div>
+                <div class="text-lg font-medium text-[var(--primary)]">
+                  Sarah K., Fashion Brand Owner
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="text-center px-4">
+                <div class="text-2xl md:text-3xl italic text-gray-700 mb-8">
+                  "Our store load time went from 4.2s to 1.5s after his optimizations. The difference in mobile conversions was night and day."
+                </div>
+                <div class="text-lg font-medium text-[var(--primary)]">
+                  Michael T., Electronics Retailer
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide">
+              <div class="text-center px-4">
+                <div class="text-2xl md:text-3xl italic text-gray-700 mb-8">
+                  "The custom product configurator he built increased our AOV by 28%. His understanding of Shopify's capabilities is unmatched."
+                </div>
+                <div class="text-lg font-medium text-[var(--primary)]">
+                  Jessica L., Furniture Store
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative" data-aos="fade-right">
+          <div class="absolute -top-6 -left-6 w-32 h-32 bg-[var(--pastel-mint)] rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+          <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-[var(--pastel-peach)] rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+          <div class="absolute top-20 -right-4 w-32 h-32 bg-[var(--primary)] rounded-full mix-blend-multiply opacity-20 animate-blob animation-delay-4000"></div>
+          <img src="./images/IMG_20210714_151327-01.jpeg" alt="Profile" class="relative rounded-xl shadow-2xl w-full max-w-md mx-auto border-4 border-white">
+        </div>
+        
+        <div data-aos="fade-left">
+          <h2 class="text-4xl font-bold mb-6 text-[var(--dark)]">
+            About <span class="text-[var(--primary)]">Me</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Hi, I'm Mohammad Saqlain, a passionate Shopify frontend developer with 3 years of experience creating high-performing eCommerce stores.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            I specialize in crafting custom Shopify themes that not only look stunning but are engineered for maximum conversions. My approach combines aesthetic design with technical excellence to create stores that perform.
+          </p>
+          <p class="text-lg text-gray-600 mb-8">
+            When I'm not coding, you can find me studying the latest eCommerce trends, experimenting with new animation techniques, or helping other developers in the Shopify community.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-[var(--light)] px-4 py-2 rounded-full flex items-center">
+              <i class="fas fa-map-marker-alt text-[var(--primary)] mr-2"></i>
+              <span>Based in skardu Gilgit Baltistan</span>
+            </div>
+            <div class="bg-[var(--light)] px-4 py-2 rounded-full flex items-center">
+              <i class="fas fa-briefcase text-[var(--primary)] mr-2"></i>
+              <span>3+ Years Experience</span>
+            </div>
+            <div class="bg-[var(--light)] px-4 py-2 rounded-full flex items-center">
+              <i class="fas fa-store text-[var(--primary)] mr-2"></i>
+              <span>20+ Stores Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-[var(--dark)] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-4xl font-bold mb-6">
+            Let's Build Something <span class="text-[var(--primary)]">Amazing</span>
+          </h2>
+          <p class="text-xl opacity-90 mb-8">
+            Have a Shopify project in mind? I'd love to hear about it!
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-[var(--primary)] mr-4 text-xl"></i>
+              <span>saqukharkovi@gmail.com</span>
+            </div>
+            <div class="flex space-x-6 mt-8">
+              <a href="#" class="hover:text-[var(--primary)] transition-colors text-xl">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="hover:text-[var(--primary)] transition-colors text-xl">
+                <i class="fab fa-dribbble"></i>
+              </a>
+              <a href="#" class="hover:text-[var(--primary)] transition-colors text-xl">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="hover:text-[var(--primary)] transition-colors text-xl">
+                <i class="fab fa-shopify"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div data-aos="fade-left">
+          <form id="contactForm" class="space-y-6">
+            <div>
+              <label for="name" class="block mb-2">Your Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-white">
+              <div id="nameError" class="text-red-400 mt-1 hidden">Please enter your name</div>
+            </div>
+            
+            <div>
+              <label for="email" class="block mb-2">Your Email</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-white">
+              <div id="emailError" class="text-red-400 mt-1 hidden">Please enter a valid email</div>
+            </div>
+            
+            <div>
+              <label for="message" class="block mb-2">Tell me about your project</label>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-white"></textarea>
+              <div id="messageError" class="text-red-400 mt-1 hidden">Please enter your message</div>
+            </div>
+            
+            <button type="submit" class="bg-[var(--primary)] hover:bg-[#5a52e0] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all w-full shadow-lg transform hover:scale-[1.02]">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-gray-400">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2023 Shopify Frontend Developer Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    
+    // Initialize Swipers
+    const projectSwiper = new Swiper('.projectSwiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+      },
+      pagination: {
+        el: '.projectSwiper .swiper-pagination',
+        clickable: true
+      }
+    });
+    
+    const testimonialSwiper = new Swiper('.testimonialSwiper', {
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.testimonialSwiper .swiper-pagination',
+        clickable: true
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      }
+    });
+    
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animate progress bars on scroll
+    document.querySelectorAll('.progress-animation').forEach(bar => {
+      gsap.from(bar, {
+        width: 0,
+        scrollTrigger: {
+          trigger: bar,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        duration: 1.5,
+        ease: "power2.out"
+      });
+    });
+    
+    // Contact form validation
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+        
+        // Validate name
+        const name = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+        if (!name.value.trim()) {
+          nameError.classList.remove('hidden');
+          isValid = false;
+        } else {
+          nameError.classList.add('hidden');
+        }
+        
+        // Validate email
+        const email = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          emailError.classList.remove('hidden');
+          isValid = false;
+        } else {
+          emailError.classList.add('hidden');
+        }
+        
+        // Validate message
+        const message = document.getElementById('message');
+        const messageError = document.getElementById('messageError');
+        if (!message.value.trim()) {
+          messageError.classList.remove('hidden');
+          isValid = false;
+        } else {
+          messageError.classList.add('hidden');
+        }
+        
+        if (isValid) {
+          // Form is valid, submit it
+          const submitBtn = contactForm.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          
+          // Simulate form submission
+          setTimeout(() => {
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          }, 1500);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
