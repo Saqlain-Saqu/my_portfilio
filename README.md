@@ -17,7 +17,7 @@ This repository showcases selected works and custom components I've developed, i
 - Responsive Layouts
 
 ## 📞 Let's Connect!
-- 💼 [LinkedIn](#)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/mohammad-saqlain-5264b2360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app )  
 - 🧑‍💻 [Fiverr Profile](
 - 📧 Email: saqukharkovi@gmail.com
 
